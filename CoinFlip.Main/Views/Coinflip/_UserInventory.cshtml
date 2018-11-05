@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "_UserInventory";
+}
+
+<div class="row item-holder" style="height:515px; display: block;">
+    @if (ViewBag.Weapons != null)
+    {
+        foreach (CoinFlip.Main.Models.WeaponWebViewModel weapon in ViewBag.Weapons)
+        {
+            <div id="col-id" class="col-xs-4 col-sm-3 col-item" data-assetid="@weapon.AssetId">
+                <div class="item-attributes">
+                    <img src="http://cdn.steamcommunity.com/economy/image/@weapon.ImageUrl" class="img-responsive" />
+                    <div class="item-info">
+                        <div class="item-name">@weapon.Name</div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

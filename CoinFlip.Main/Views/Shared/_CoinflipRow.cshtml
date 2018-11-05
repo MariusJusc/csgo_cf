@@ -1,0 +1,56 @@
+﻿@model CoinFlip.Main.Models.CoinflipViewModel
+
+@{
+    ViewBag.Title = "_CoinflipRow";
+}
+
+<tr id="@Model.CoinflipGameId">
+    @*Coinflip Table Players*@
+    <td class="coinflip-table-content-center">
+        <img class="coinflip-list-avatar" src="@Model.User1_IconUrl" />
+        @if (Model.Status != 0)
+        {
+            <span class="coinflip-vs-player">VS</span>
+            <img class="coinflip-list-avatar" src="@Model.User2_IconUrl" />
+        }
+    </td>
+    @*Coinflip Table Items*@
+    <td class="coinflip-list-items">
+       @for (int i = 0; i < Model.Player1Assets.Count; i++)
+       {
+           var Asset = Model.Player1Assets[i];
+           var assetCount = Model.Player1Assets.Count;
+           var restCount = assetCount - 6;
+
+           if (assetCount > 6)
+           {
+               if (i < 6)
+               {
+                <img class="coinflip-list-skins-small" title="@Asset.Name" src="http://cdn.steamcommunity.com/economy/image/@Asset.ImageUrl">
+            }
+            else if (i < 7)
+            {
+                <span class="coinflip-list-skins-rest">... +@restCount</span>
+            }
+        }
+        else
+        {
+            <img class="coinflip-list-skins-small" title="@Asset.Name" src="http://cdn.steamcommunity.com/economy/image/@Asset.ImageUrl">
+        }
+    }
+
+    </td>
+    @*Coinflip Table Value*@
+    <td class="coinflip-table-value-left">
+        <span class="coinflip-value">$@Model.TotalValue</span>
+    </td>
+    @*Coinflip Table Status*@
+    <td class="coinflip-table-content-center"></td>
+    @*Coinflip Table View Button*@
+    <td class="coinflip-table-content-center">
+        <button id="coinflip-game-view" type="button" data-toggle="modal" data-id="@Model.CoinflipGameId" data-target="#coinflipView" class="coinflip-list-action view-button-click">VIEW</button>
+    </td>
+</tr>
+
+
+

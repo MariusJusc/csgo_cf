@@ -1,0 +1,52 @@
+﻿@using CoinFlip.Main.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("CoinFlipApp", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                @Html.Partial("_LoginPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="footer">
+                <div class="col-md-4 col-xs-6">
+                    <p>&copy; @DateTime.Now.Year - Coin Flip</p>
+                </div>
+
+                <div class="col-md-8 col-xs-6">
+                    <ul class="pull-right">
+                        <li>Steam Bot Status: Skrrraaa</li>
+                    </ul>
+                </div>
+            </div> 
+            
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

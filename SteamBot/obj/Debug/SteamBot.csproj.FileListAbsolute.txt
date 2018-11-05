@@ -1,0 +1,15 @@
+C:\Users\Marius\Source\Repos\cf_csgo\Bin\Debug\SteamBot.exe.config
+C:\Users\Marius\Source\Repos\cf_csgo\Bin\Debug\SteamBot.exe
+C:\Users\Marius\Source\Repos\cf_csgo\Bin\Debug\SteamBot.pdb
+C:\Users\Marius\Source\Repos\cf_csgo\SteamBot\obj\Debug\SteamBot.csprojResolveAssemblyReference.cache
+C:\Users\Marius\Source\Repos\cf_csgo\SteamBot\obj\Debug\SteamBot.csproj.CoreCompileInputs.cache
+C:\Users\Marius\Source\Repos\cf_csgo\SteamBot\obj\Debug\SteamBot.exe
+C:\Users\Marius\Source\Repos\cf_csgo\SteamBot\obj\Debug\SteamBot.pdb
+C:\Users\Marius\Dropbox\Projects\cf_csgo\Bin\Debug\SteamBot.exe.config
+C:\Users\Marius\Dropbox\Projects\cf_csgo\Bin\Debug\SteamBot.exe
+C:\Users\Marius\Dropbox\Projects\cf_csgo\Bin\Debug\SteamBot.pdb
+C:\Users\Marius\Dropbox\Projects\cf_csgo\SteamBot\obj\Debug\SteamBot.csproj.CoreCompileInputs.cache
+C:\Users\Marius\Dropbox\Projects\cf_csgo\SteamBot\obj\Debug\SteamBot.csproj.CopyComplete
+C:\Users\Marius\Dropbox\Projects\cf_csgo\SteamBot\obj\Debug\SteamBot.exe
+C:\Users\Marius\Dropbox\Projects\cf_csgo\SteamBot\obj\Debug\SteamBot.pdb
+C:\Users\Marius\Dropbox\Projects\cf_csgo\SteamBot\obj\Debug\SteamBot.csprojResolveAssemblyReference.cache

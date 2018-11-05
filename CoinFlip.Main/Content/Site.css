@@ -1,0 +1,484 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*Overriden navbar*/
+.navbar-inverse {
+    background-color: #202529 !important;
+    border-color: #202529 !important;
+}
+
+.transparent-button {
+    background-color: #202529;
+    border: none;
+}
+
+.steam_profile_picture {
+    border-radius: 50%;
+    width: 40px;
+    height: auto;
+}
+
+.footer {
+    background-color: #202529;
+    position: fixed;
+    width: 100%;
+    height: 5%;
+    bottom: 0px;
+    left: 0px;
+}
+
+.popup-title-font-text {
+    font-size: 20px;
+}
+
+.navbar-right-remastered {
+    float:right;
+}
+/*Coinflip Overview*/
+
+.general-status {
+    background-color: #202529;
+    text-align: center;
+    padding: 8px 5px 5px 5px;
+    min-height: 70px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+    .general-status h1 {
+        color: #9c9c9c;
+        font-size: 20px;
+        text-align: center;
+        padding: 5px 3px 15px 3px;
+        margin: 0;
+        font-weight: bolder;
+    }
+.coinflip-overview-border-right {
+    border-right: 3px solid #32383d;
+}
+
+.coinflip-overview-numbers {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.coinflip-overview-titles {
+    color: #9c9c9c;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: bolder;
+}
+
+.coinflip-overview-action {
+    background-color: #2379dc;
+    width: 75%;
+    height: 45px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 5px;
+    margin-top: 13px;
+}
+
+/*Create Coinflip Inventory*/
+.coinflip-inventory-user {
+    min-height: 200px;
+}
+
+.item-holder {
+    overflow: auto;
+    position: relative;
+    padding: 5px;
+}
+
+.col-item {
+    border: 3px solid transparent;
+    position: relative;
+    padding: 0;
+}
+
+.item-attributes {
+    background-color: #202529;
+    margin: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    min-height: 100px;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100px;
+    height: auto;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+.item-info {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    text-align: center;
+    margin: 5px;
+    margin-top: 10px;
+    width: 126px;
+    color: #ccc;
+}
+
+.item-name {
+    background-color: rgba(50,50,50,0.5);
+    color: #ccc;
+    font-size: 11px;
+    min-height: 28px;
+    max-height: 40px;
+    padding: 3px 2px;
+    margin-bottom: 10px;
+}
+
+.item-attributes:hover .item-name {
+    background-color: #2379dc;
+}
+.selected .item-name {
+    background-color: #2379dc;
+}
+
+.col-right {
+    display: inline-block;
+    float: right;
+}
+
+.hidden-button {
+    visibility: hidden;
+}
+
+.visible-button {
+    visibility: visible;
+}
+
+.coinflip-inventory-loading-visibility {
+    display: none;
+}
+
+/*Trade Offer*/
+.cf-tradeOffer {
+  text-align: center;
+  font-size: 21px;
+  padding: 25px 0;
+}
+
+.cf-tradeOffer-Ref {
+    padding-top: 5px;
+    font-size: 14px;
+    text-align: center;
+    font-style: italic;
+}
+
+.cf-tradeOffer-Btn-Allig {
+    padding: 10px;
+    text-align: center;
+}
+
+.cf-tradeOffer-Btns {
+    width: 120px;
+    background-color: #2379dc;
+    padding: 10px 16px;
+    height: 40px;
+    border: 0px;
+    border-radius: 25px;
+    font-size: 12px;
+}
+
+/*Coinflip TABLE*/
+.coinflip-body {
+    background-color: #202529;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.coinflip-table-font-size {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.coinflip-table-content-center {
+    text-align:center;
+    vertical-align:middle;
+}
+
+.coinflip-table-value-left {
+    text-align: left;
+}
+
+/*Coinflip LIST*/
+
+.list-col {
+    width: 80%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.coinflip-list-avatar {
+    height: 40px;
+    width: auto;
+    border-radius: 2px;
+    opacity: 0.85;
+}
+
+.coinflip-list-items {
+    width: 13%;
+    height: auto;
+}
+
+.coinflip-list-skins-small {
+    width: 10%;
+    height: auto;
+}
+
+.coinflip-list-skins-rest {
+    color: #9c9c9c;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.coinflip-list-value {
+    padding: 7px 10px;
+    font-size: 15px;
+}
+
+.coinflip-list-action {
+    background-color: #2379dc;
+    width: 70px;
+    height: 35px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 25px;
+}
+
+.coinflip-list-items-view {
+    color: #2379dc;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+tbody td {
+    padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #32383d;
+    /*202529    32383d*/
+}
+
+/*CHAT*/
+.chat-col {
+    width: 20%;
+    float: right;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.chat-body {
+    background-color: #202529;
+    height: 420px;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 4px;
+}
+
+.chat-messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.ps-container {
+    overflow: hidden;
+}
+
+.chat-text-body {
+    padding-left: 45px;
+}
+
+.chat-message-column {
+    padding-top: 10px;
+    padding-left: 6px;
+    padding-bottom: 10px;
+}
+
+.chat-message-pic {
+    height: 40px;
+    width: auto;
+    border-radius: 15px;
+}
+
+.chat-message-name {
+    padding-bottom: 10px;
+}
+
+ul li:nth-child(odd) {
+    background-color: #32383d;
+    /*202529    32383d*/
+}
+
+.chat-insert-box {
+    background-color: #202529;
+    padding: 4px;
+}
+
+.chat-insert {
+    background-color: #32383d;
+    border: none;
+    width: 100%;
+    padding: 15px;
+}
+
+.chat-insert-button-box {
+    padding-top: 5px;
+}
+
+.chat-send-button {
+    background-color: #2379dc;
+    width: 70px;
+    height: 35px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 5px;
+}
+
+/* COINFLIP GAME */
+
+.cf_game_player {
+    position: relative;
+    margin: 0 auto;
+    width: 184px;
+    height: 184px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.cf_game_avatar {
+    text-align: center;
+}
+
+.cf_game_avatar_src {
+    width: 90%;
+    height: auto;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.cf_game_username {
+    text-align: center;
+    font-size: 17px;
+    font-weight: bolder;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.cf_game_coin_pos {
+    text-align: center;
+}
+
+.cf_game_value_panel {
+    border: 2px solid #32383d;
+    background-color: #202529;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.cf_game_value_panel_info {
+    font-size: 30px;
+}
+
+.cf_game_asset_list {
+    margin: 0 auto;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.cf_game_item {
+    background-color: #32383d;
+    width: 90%;
+    height: 30%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.cf_game_item_icon {
+    float: left;
+    width: 30%;
+    height: auto;
+    position: relative;
+    background-color: #202529;
+    padding-top: 8px;
+}
+
+.cf_game_item_icon_src {
+    width: 75%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    opacity: 1;
+}
+
+.cf_game_item_price {
+    position: absolute;
+    bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    width: 111px;
+    background-color: rgba(35, 121, 220, 0.6);
+    opacity: 2;
+}
+
+.cf_game_item_name {
+    float: left;
+    width: 70%;
+    height: 100%;
+    font-weight: bolder;
+    padding: 10px 10px;
+    color: #9c9c9c;
+}

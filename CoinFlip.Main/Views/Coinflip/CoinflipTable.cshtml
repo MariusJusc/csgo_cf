@@ -1,0 +1,52 @@
+﻿
+@model CoinFlip.Main.Models.TradesViewModel
+
+@{
+    ViewBag.Title = "CoinflipTable";
+}
+
+@foreach (CoinFlip.Main.Models.CoinflipViewModel cfGames in Model.Coinflips)
+{
+    <tr id="@cfGames.CoinflipGameId">
+        <td class="coinflip-table-content-center">
+            <img class="coinflip-list-avatar" src="@cfGames.User1_IconUrl" />
+            @if (cfGames.Status != 0)
+            {
+                <span class="coinflip-vs-player">VS</span>
+                <img class="coinflip-list-avatar" src="@cfGames.User2_IconUrl" />
+            }
+        </td>
+        <td class="coinflip-list-items">
+            @for (int i = 0; i < cfGames.Player1Assets.Count; i++)
+            {
+                var Asset = cfGames.Player1Assets[i];
+                var assetCount = cfGames.Player1Assets.Count;
+                var restCount = assetCount - 6;
+
+                if (assetCount > 6)
+                {
+                    if (i < 6)
+                    {
+                        <img class="coinflip-list-skins-small" title="@Asset.Name" src="http://cdn.steamcommunity.com/economy/image/@Asset.ImageUrl">
+                    }
+                    else if (i < 7)
+                    {
+                        <span class="coinflip-list-skins-rest">... +@restCount</span>
+                    }
+                }
+                else
+                {
+                    <img class="coinflip-list-skins-small" title="@Asset.Name" src="http://cdn.steamcommunity.com/economy/image/@Asset.ImageUrl">
+                }
+            }
+
+        </td>
+        <td class="coinflip-table-value-left">
+            <span class="coinflip-value">$@cfGames.TotalValue</span>
+        </td>
+        <td id="countDownTimer" class="coinflip-table-content-center"></td>
+        <td class="coinflip-table-content-center">
+            <button type="button" data-toggle="modal" data-id="@cfGames.CoinflipGameId" data-target="#coinflip-game-view" class="coinflip-list-action view-button-click">VIEW</button>
+        </td>
+    </tr>
+}

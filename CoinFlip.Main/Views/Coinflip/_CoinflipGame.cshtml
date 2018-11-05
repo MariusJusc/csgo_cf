@@ -1,0 +1,92 @@
+﻿ @model CoinFlip.Main.Models.CoinflipViewModel
+
+<div id="cf_game_playerpar" class="row">
+    @*PLAYER 1*@
+    <div class="col-sm-4">
+        <div class="cf_game_player">
+            <div class="cf_game_avatar">
+                <img class="cf_game_avatar_src" src="@Model.User1_IconUrl" />
+            </div>
+            <div class="cf_game_username">@Model.User1_Username</div>
+            <div class="cf_game_player_side"></div>
+        </div>
+    </div>
+    @*COIN*@
+    <div class="col-sm-4">
+        <div class="cf_game_coin_pos">
+            <img src="https://cdr-rrnuj0riv3uxeibbzg.netdna-ssl.com/assets/images/coinflip/coin-t-big.png" />
+        </div>
+    </div>
+    @*PLAYER 2*@
+    <div class="col-sm-4">
+        @if (Model.Status != 0)
+        {
+            <div class="cf_game_player">
+                <div class="cf_game_avatar">
+                    <img class="cf_game_avatar_src" src="@Model.User2_IconUrl" />
+                </div>
+                <div class="cf_game_username">@Model.User2_Username</div>
+                <div class="cf_game_player_side"></div>
+            </div>
+        }
+    </div>
+</div>
+<div id="cf_game_listpar" class="row">
+    @*Player 1 Panel*@
+    <div class="col-sm-6">
+        @*Value Panel*@
+        <div class="cf_game_value_panel">
+            <div class="cf_game_value_panel_info">
+                $2200 - 51%
+            </div>
+        </div>
+        @*Player 1 Asset List*@
+        <div class="cf_game_asset_list">
+            @foreach (var assets in Model.Player1Assets)
+            {
+                <div class="cf_game_item">
+                    <div class="cf_game_item_icon">
+                        <img class="cf_game_item_icon_src" src="http://cdn.steamcommunity.com/economy/image/@assets.ImageUrl" />
+                        <div class="cf_game_item_price"> $225.00</div>
+                    </div>
+                    <div class="cf_game_item_name">
+                        <div>@assets.Name</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    @*Player 2 Panel*@
+    <div class="col-sm-6">
+        @if (Model.Status != 0)
+        {
+            @*Value Panel*@
+            <div class="cf_game_value_panel">
+                <div class="cf_game_value_panel_info">
+                    $220 - 12%
+                </div>
+            </div>
+            @*Player 2 Asset List*@
+            <div class="cf_game_asset_list">
+                @foreach (var assets in Model.Player2Assets)
+                {
+                    <div class="cf_game_item">
+                        <div class="cf_game_item_icon">
+                            <img class="cf_game_item_icon_src" src="http://cdn.steamcommunity.com/economy/image/@assets.ImageUrl" />
+                            <div class="cf_game_item_price"> $225.00</div>
+                        </div>
+                        <div class="cf_game_item_name">
+                            <div>@assets.Name</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <button type="button" data-id="@Model.CoinflipGameId" class="coinflip-list-action join-button-click">JOIN</button>
+        }
+
+    </div>
+</div>
+

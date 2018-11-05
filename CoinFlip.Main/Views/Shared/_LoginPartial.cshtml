@@ -1,0 +1,40 @@
+﻿@using CoinFlip.Main.Extensions
+
+    @model CoinFlip.Main.Models.ExternalLoginListViewModel
+
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <ul class="nav navbar-nav navbar-right-remastered">
+                <li class="active dropdown">
+                    <a class="dropdown-toggle" role="button" aria-expanded="false" aria-haspopup="true" href="#" data-toggle="dropdown">
+                        <img class="steam_profile_picture" alt="" src="@ViewBag.LoadUsetAvatar" />
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a data-toggle="modal" data-target=".bootstrapmodal">Trade Url</a></li>
+                        <li role="separator"></li>
+                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                    </ul>
+                </li>
+            </ul>
+        }
+    }
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }))
+                {
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="transparent-button" name="provider" value="Steam" style="">
+                        <img src="/Content/Images/SteamLog.png">
+                    </button>
+                }
+            </li>
+        </ul>
+    }
+

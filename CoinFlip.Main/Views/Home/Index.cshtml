@@ -1,0 +1,184 @@
+﻿@model CoinFlip.Main.Models.ExternalLoginConfirmationViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+@*Coinflip OVERVIEW & STATUS & TABLE*@
+<div class="row">
+    <div class="col-sm-6">
+        <div class="general-status">
+            <h1>OVERVIEW</h1>
+            <div class="row">
+                <div class="col-xs-4 col-md-4 coinflip-overview-border-right">
+                    <div class="coinflip-overview-numbers">8</div>
+                    <div class="coinflip-overview-titles">JOINABLE</div>
+                </div>
+                <div class="col-xs-4 col-md-4 coinflip-overview-border-right">
+                    <div class="coinflip-overview-numbers">45</div>
+                    <div class="coinflip-overview-titles">PLAYERS</div>
+                </div>
+                <div class="col-xs-4 col-md-4 ">
+                    <div class="coinflip-overview-numbers">$5333.56</div>
+                    <div class="coinflip-overview-titles">TOTAL POT</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="general-status">
+            <h1>STATUS</h1>
+            <div class="row">
+                <div class="col-xs-4 col-md-4 coinflip-overview-border-right">
+                    <div class="coinflip-overview-numbers">20</div>
+                    <div class="coinflip-overview-titles">TOTAL WINS</div>
+                </div>
+                <div class="col-xs-4 col-md-4 coinflip-overview-border-right">
+                    <div class="coinflip-overview-numbers">2/4</div>
+                    <div class="coinflip-overview-titles">ACTIVE GAMES</div>
+                </div>
+                <div class="col-xs-4 col-md-4 coinflip-overview-border-right">
+                    <button id="coinflipCreateBtn" type="button" data-toggle="modal" data-target="#coinflipCreate" class="coinflip-overview-action">CREATE GAME</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-col">
+        @*col-xs-8*@
+        <div id="coinflip-list">
+            <div class="coinflip-body">
+                <table id="coinflip-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%; padding-bottom:4px; text-align: center">PLAYERS</th>
+                            <th style="width: 60%; padding-bottom:4px; padding-left: 10px">ITEMS</th>
+                            <th style="width: 10%; padding-bottom:4px; padding-left: 10px">VALUE</th>
+                            <th style="width: 10%; padding-bottom:4px; text-align: center">STATUS</th>
+                            <th style="width: auto; padding-bottom:4px; text-align: center">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody id="coinflip-list-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="chat-col">
+        <div id="chat-wrapper">
+            <div class="chat-body ps-container ps-active-x ps-active-y ">
+                <ul id="chat_box" class="chat-messages">
+                    <li class="chat-message-column">
+                        <span class="chat-img pull-left">
+                            <img alt="" class="chat-message-pic" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/51/518113aa1ca8373c57ddbcf86460cab54547dddf.jpg" />
+                        </span>
+                        <div class="chat-text-body">
+                            <div class="header">
+                                <strong class="chat-message-name text-muted">Kaunet</strong>
+                            </div>
+                            <p>Skrapapa</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="chat-insert-box">
+                <input id="chat_message" class="chat-insert" placeholder="Please insert text" autocomplete="off" />
+                <div class="chat-insert-button-box">
+                    <button id="chat_send_message_btn" class="chat-send-button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="coinflip-game-view" class="modal bootstrapmodal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="closeCfGame" class="close">&times;</span>
+                <div class="modal-title popup-title-font-text">Coinflip</div>
+            </div>
+            <div id="cf_game_body" class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*Modal Popup Body
+    @using (Html.BeginForm("UpdateTradeUrl", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <hr />
+        <div class="modal fade bootstrapmodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button data-dismiss="modal" class="close"><span>&times;</span></button>
+                        <div class="modal-title popup-title-font-text"> Trade Url</div>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.TradeUrl, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.TradeUrl, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn btn-default" value="Register" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }*@
+
+@if (Request.IsAuthenticated)
+{
+    <div id="coinflipCreate" class="modal bootstrapmodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span id="close" class="close">&times;</span>
+                    <div class="modal-title popup-title-font-text">Coinflip</div>
+                </div>
+                <div class="modal-body">
+                    <div id="coinflip-inventory-userId" class="coinflip-inventory-user">
+
+                    </div>
+                    <div id="coinflip-inventory-loadingId" class="coinflip-inventory-loading-visibility">
+                        <p class="cf-tradeOffer">Offer is live</p>
+                        <p class="cf-tradeOffer-Ref">Reference: 123abc987, Secret: 567fGs23kkF</p>
+                        <div class="cf-tradeOffer-Btn-Allig">
+                            <button id="cf-tradeOffer-BtnId" type="button" class="cf-tradeOffer-Btns">Trade</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-sm-6 col-right coinflip-create-btn center-text">
+                        <button id="coinflipContinue" type="button" class="coinflip-create-game-btn hidden-button">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/signalr")
+    @Scripts.Render("/signalr/hubs")
+
+    <script>
+        TableRefresher();
+</script>
+}
