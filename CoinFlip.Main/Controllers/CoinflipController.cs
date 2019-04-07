@@ -26,8 +26,6 @@ namespace CoinFlip.Main.Controllers
         private UserRetriever userRetriever;
         private ItemRootObject inventory = new ItemRootObject();
         private ApplicationUserManager _userManager;
-        private string _userId = "";
-        private int countDownSecond;
 
         bool tradeComlpete = true;
 
@@ -109,8 +107,9 @@ namespace CoinFlip.Main.Controllers
             return new EmptyResult();
         }
 
-        //
+        // <summary>
         // Returns all currently active games Pending & Joined.
+        // </summary>21
         [HttpGet]
         [Route("coinflip-table")]
         public ActionResult RefreshCoinflipTableGames()
@@ -168,8 +167,9 @@ namespace CoinFlip.Main.Controllers
             return PartialView("CoinflipTable", new TradesViewModel { Coinflips = result });
         }
 
-        //
+        //<summary>
         // Loads the users steam inventory on Create Game.
+        //</summary>
         [Route("load-inventory")]
         [Authorize]
         public ActionResult InventoryFetcher()
@@ -191,8 +191,9 @@ namespace CoinFlip.Main.Controllers
             return PartialView("_UserInventory");
         }
 
-        //
+        //<summary>
         // Loads the Coinflip Game in depth view.
+        //</summary>
         [Route("load-coinflip-game")]
         public ActionResult LoadCoinflipGameView(string cfId)
         {
@@ -242,8 +243,9 @@ namespace CoinFlip.Main.Controllers
             return PartialView("_CoinflipGame", model);
         }
 
-        //
+        // <summary>
         // Gets Coinflip Game by GUID
+        // </summary>
         private CoinflipViewModel GetCoinflipGameByGuid(string cfGuid)
         {
             var result = this.Data.Coinflips.All().Where(x => x.CoinflipGuidId.ToString() == cfGuid).ToList();
@@ -290,9 +292,10 @@ namespace CoinFlip.Main.Controllers
             }
             return null;
         }
-
-        //
+        
+        // <summary>
         // Converts Partial View HTML to String and Return for SignalR.
+        // </summary>
         public string ReturnViewHTML(string userId, List<string> assetIds)
         {
             var coinflips = this.Data.Coinflips.All().Where(x => x.Status == Status.Pending || x.Status == Status.Joined && x.User1_SteamId == userId).ToList();

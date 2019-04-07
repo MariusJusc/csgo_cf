@@ -25,3 +25,17 @@ C:\Users\Marius\Dropbox\Projects\cf_csgo\SteamAPI\obj\Debug\SteamAPI.csproj.Copy
 C:\Users\Marius\Dropbox\Projects\cf_csgo\SteamAPI\obj\Debug\SteamAPI.dll
 C:\Users\Marius\Dropbox\Projects\cf_csgo\SteamAPI\obj\Debug\SteamAPI.pdb
 C:\Users\Marius\Dropbox\Projects\cf_csgo\SteamAPI\obj\Debug\SteamAPI.csprojResolveAssemblyReference.cache
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\obj\Debug\SteamAPI.csprojAssemblyReference.cache
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\obj\Debug\SteamAPI.csproj.CoreCompileInputs.cache
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\obj\Debug\SteamAPI.dll
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\obj\Debug\SteamAPI.pdb
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\bin\Debug\SteamAPI.dll
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\bin\Debug\SteamAPI.pdb
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\bin\Debug\protobuf-net.dll
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\bin\Debug\SteamKit2.dll
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\bin\Debug\protobuf-net.pdb
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\bin\Debug\protobuf-net.xml
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\bin\Debug\SteamKit2.xml
+C:\Users\1028753\Source\Repos\csgo_cf2\SteamAPI\obj\Debug\SteamAPI.csproj.CopyComplete

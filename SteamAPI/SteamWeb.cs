@@ -11,8 +11,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using SteamKit2;
 
-//http://steamcommunity.com/profiles/76561198080614320/inventory/json/440/2/?trading=1
-
 namespace SteamAPI
 {
     public class SteamWeb
@@ -23,9 +21,12 @@ namespace SteamAPI
         public string TokenSecure { get; private set; }
         private CookieContainer _cookies = new CookieContainer();
 
-        public string Fetch()
+        //<summary>
+        // Fetches JSON from services
+        // </summary>
+        public string Fetch(string url, string method, NameValueCollection data = null, bool ajax = true, string referer = "")
         {
-            using (HttpWebResponse response = (HttpWebRequest)WebRequest.Create("http://api.icndb.com/jokes/random"))
+            using (HttpWebResponse response = (HttpWebResponse)WebRequest.Create(url).GetResponse())
             {
                 using (Stream responseStream = response.GetResponseStream())
                 {
@@ -94,7 +95,7 @@ namespace SteamAPI
         {
             var data = new NameValueCollection();
             data.Add("username", username);
-            string response = Fetch("https://steamcommunity.com/login/getrsakey", "POST", data, false);
+            string response = Fetch("https://steamcommunity.com/login/getrsakey", "POST", data);
             GetRsaKey rsaJSON = JsonConvert.DeserializeObject<GetRsaKey>(response);
 
 
@@ -304,7 +305,6 @@ namespace SteamAPI
             // allow all certificates
             return true;
         }
-
     }
 
     // JSON Classes
@@ -332,7 +332,5 @@ namespace SteamAPI
         public bool emailauth_needed { get; set; }
 
         public string emailsteamid { get; set; }
-
     }
-
 }

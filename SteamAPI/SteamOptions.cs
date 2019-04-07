@@ -8,7 +8,8 @@ namespace SteamAPI
 {
     public class SteamOptions
     {
-        private readonly string WebApiKey = "F99139DFB8ADF45439E634DF9D662105";
+        // Insert steam web api here...
+        private readonly string WebApiKey = "";
 
         public string getApiKey()
         {
